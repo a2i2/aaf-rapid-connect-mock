@@ -15,24 +15,16 @@ $ npm install aaf-rapid-connect-mock
 Example:
 
 ```js
-import express from "express";
-import bodyParser from "body-parser";
 import mockRapidConnect from "aaf-rapid-connect-mock";
 
-let app = express().use(bodyParser.json());
+let options = {
+  jwtSecret: "who cares",
+  spUrl: "who cares",
+  federationUrl: "who cares",
+  uiUrl: "http://localhost:9000"
+};
 
-if (process.env.NODE_ENV !== "production") {
-  let options = {
-    jwtSecret: "who cares",
-    idpUrl: "/mock",
-    spUrl: "who cares",
-    federationUrl: "who cares",
-    uiUrl: "http://localhost:9000"
-  };
-  let { get, post } = mockRapidConnect(options);
-  app.get("/mock", get);
-  app.post("/mock", post);
-}
-
-app.listen(3000, () => console.log("Web server started."));
+mockRapidConnect(options).listen(3000);
 ```
+
+As shown, the package exposes a function that is passed `options` and returns an [Express](http://expressjs.com) application instance.
