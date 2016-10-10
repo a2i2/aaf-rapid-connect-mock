@@ -20,7 +20,6 @@ import mockRapidConnect from "aaf-rapid-connect-mock";
 let options = {
   jwtSecret: "who cares",
   spUrl: "who cares",
-  federationUrl: "who cares",
   uiUrl: "http://localhost:9000"
 };
 
@@ -43,7 +42,6 @@ if (process.env.NODE_ENV !== "production") {
   let options = {
     jwtSecret: "who cares",
     spUrl: "who cares",
-    federationUrl: "who cares",
     uiUrl: "http://localhost:9000"
   };
 
