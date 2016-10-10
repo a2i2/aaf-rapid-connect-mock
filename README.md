@@ -1,4 +1,4 @@
-# aaf-rapid-connect-mock
+# aaf-rapid-connect-mock [![NPM version](http://img.shields.io/npm/v/aaf-rapid-connect-mock.svg?style=flat-square)](https://www.npmjs.org/package/aaf-rapid-connect-mock) [![Build status](http://img.shields.io/travis/dstil/aaf-rapid-connect-mock.svg?style=flat-square)](https://travis-ci.org/dstil/aaf-rapid-connect-mock)
 
 Host a "mock" instance of [AAF Rapid Connect](https://rapid.aaf.edu.au).
 
@@ -17,11 +17,9 @@ Example:
 ```js
 import express from "express";
 import bodyParser from "body-parser";
-import mockRapidConnect from "../lib";
+import mockRapidConnect from "aaf-rapid-connect-mock";
 
-let app = express();
-
-app.use(bodyParser.json());
+let app = express().use(bodyParser.json());
 
 if (process.env.NODE_ENV !== "production") {
   let options = {
