@@ -28,3 +28,27 @@ mockRapidConnect(options).listen(3000);
 ```
 
 As shown, the package exposes a function that is passed `options` and returns an [Express](http://expressjs.com) application instance.
+
+## Tip
+
+To integrate the package into an *existing* Express application, simply mount it at a path:
+
+```js
+import express from "express";
+import mockRapidConnect from "aaf-rapid-connect-mock";
+
+let app = express();
+
+if (process.env.NODE_ENV !== "production") {
+  let options = {
+    jwtSecret: "who cares",
+    spUrl: "who cares",
+    federationUrl: "who cares",
+    uiUrl: "http://localhost:9000"
+  };
+
+  app.use("/mock", mockRapidConnect(options));
+}
+
+app.listen(3000);
+```
