@@ -26,6 +26,7 @@ As shown, the package exposes a function that returns an [Express](http://expres
 - `appUrl` – The main entry point URL of the application. Defaults to `https://example.com`.
 - `authUrl` – The callback URL that JWTs are sent to on sign-in. Defaults to `/auth`.
 - `jwtSecret` – The secret key used to sign JWTs. Defaults to `secret`.
+- `pageTitle` – The title of the sign-in page. Defaults to `AAF Rapid Connect`.
 
 ## Tip
 
