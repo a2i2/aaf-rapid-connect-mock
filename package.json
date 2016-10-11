@@ -1,6 +1,6 @@
 {
   "name": "aaf-rapid-connect-mock",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Host a 'mock' instance of AAF Rapid Connect.",
   "author": "DSTIL",
   "license": "MIT",
