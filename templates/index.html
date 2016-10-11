@@ -71,7 +71,7 @@
           // To perform a "POST redirect", create a temporary form and submit it.
           var tempForm = document.createElement("form");
           tempForm.method = "POST";
-          tempForm.action = "auth";
+          tempForm.action = "<%= authUrl %>";
           document.body.appendChild(tempForm);
 
           var input = document.createElement("input");

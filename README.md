@@ -17,16 +17,15 @@ Example:
 ```js
 import mockRapidConnect from "aaf-rapid-connect-mock";
 
-let options = {
-  jwtSecret: "who cares",
-  spUrl: "who cares",
-  uiUrl: "http://localhost:9000"
-};
-
+let options = { ... };
 mockRapidConnect(options).listen(3000);
 ```
 
-As shown, the package exposes a function that is passed `options` and returns an [Express](http://expressjs.com) application instance.
+As shown, the package exposes a function that returns an [Express](http://expressjs.com) application instance. The following `options` can be specified:
+
+- `appUrl` – The main entry point URL of the application. Defaults to `https://example.com`.
+- `authUrl` – The callback URL that JWTs are sent to on sign-in. Defaults to `/auth`.
+- `jwtSecret` – The secret key used to sign JWTs. Defaults to `secret`.
 
 ## Tip
 
@@ -39,13 +38,7 @@ import mockRapidConnect from "aaf-rapid-connect-mock";
 let app = express();
 
 if (process.env.NODE_ENV !== "production") {
-  let options = {
-    jwtSecret: "who cares",
-    spUrl: "who cares",
-    uiUrl: "http://localhost:9000"
-  };
-
-  app.use("/mock", mockRapidConnect(options));
+  app.use("/mock", mockRapidConnect());
 }
 
 app.listen(3000);
