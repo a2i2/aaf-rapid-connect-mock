@@ -23,9 +23,9 @@ mockRapidConnect(options).listen(3000);
 
 As shown, the package exposes a function that returns an [Express](http://expressjs.com) application instance. The following `options` can be specified:
 
+- `jwtSecret` – The secret key used to sign JWTs. Required!
 - `appUrl` – The main entry point URL of the application. Defaults to `https://example.com`.
 - `authUrl` – The callback URL that JWTs are sent to on sign-in. Defaults to `/auth`.
-- `jwtSecret` – The secret key used to sign JWTs. Defaults to `secret`.
 - `pageTitle` – The title of the sign-in page. Defaults to `AAF Rapid Connect`.
 
 ## Tip
@@ -39,7 +39,8 @@ import mockRapidConnect from "aaf-rapid-connect-mock";
 let app = express();
 
 if (process.env.NODE_ENV !== "production") {
-  app.use("/mock", mockRapidConnect());
+  let jwtSecret = "secret";
+  app.use("/mock", mockRapidConnect({ jwtSecret }));
 }
 
 app.listen(3000);
