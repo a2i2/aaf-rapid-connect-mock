@@ -4,13 +4,7 @@
   "description": "Host a local 'mock' instance of AAF Rapid Connect.",
   "author": "DSTIL",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dstil/aaf-rapid-connect-mock.git"
-  },
-  "bugs": {
-    "url": "https://github.com/dstil/aaf-rapid-connect-mock/issues"
-  },
+  "repository": "dstil/aaf-rapid-connect-mock",
   "main": "dist",
   "scripts": {
     "build": "node_modules/.bin/babel lib -d dist -q",
